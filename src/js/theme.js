@@ -1,5 +1,5 @@
 /**
- * Silicon | Multipurpose Bootstrap Template & UI Kit
+ * Kriptograph | Multipurpose Bootstrap Template & UI Kit
  * Copyright 2023 Createx Studio
  * Theme core scripts
  *

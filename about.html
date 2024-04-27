@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8">
+    <title>Kriptograph</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Kriptograph">
+    <meta name="keywords" content="">
+    <meta name="author" content="Kriptograph Inc.">
+
+    <!-- Viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon and Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#6366f1">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#080032">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- Vendor Styles -->
+    <link rel="stylesheet" media="screen" href="assets/vendor/boxicons/css/boxicons.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" media="screen" href="assets/vendor/lightgallery/css/lightgallery-bundle.min.css">
+
+    <!-- Main Theme Styles + Bootstrap -->
+    <link rel="stylesheet" media="screen" href="assets/css/theme.min.css">
+
+    <!-- Page loading styles -->
+    <style>
+      .page-loading {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        -webkit-transition: all .4s .2s ease-in-out;
+        transition: all .4s .2s ease-in-out;
+        background-color: #fff;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 9999;
+      }
+      [data-bs-theme="dark"] .page-loading {
+        background-color: #0b0f19;
+      }
+      .page-loading.active {
+        opacity: 1;
+        visibility: visible;
+      }
+      .page-loading-inner {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        -webkit-transform: translateY(-50%);
+        transform: translateY(-50%);
+        -webkit-transition: opacity .2s ease-in-out;
+        transition: opacity .2s ease-in-out;
+        opacity: 0;
+      }
+      .page-loading.active > .page-loading-inner {
+        opacity: 1;
+      }
+      .page-loading-inner > span {
+        display: block;
+        font-size: 1rem;
+        font-weight: normal;
+        color: #9397ad;
+      }
+      [data-bs-theme="dark"] .page-loading-inner > span {
+        color: #fff;
+        opacity: .6;
+      }
+      .page-spinner {
+        display: inline-block;
+        width: 2.75rem;
+        height: 2.75rem;
+        margin-bottom: .75rem;
+        vertical-align: text-bottom;
+        border: .15em solid #b4b7c9;
+        border-right-color: transparent;
+        border-radius: 50%;
+        -webkit-animation: spinner .75s linear infinite;
+        animation: spinner .75s linear infinite;
+      }
+      [data-bs-theme="dark"] .page-spinner {
+        border-color: rgba(255,255,255,.4);
+        border-right-color: transparent;
+      }
+      @-webkit-keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+      @keyframes spinner {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+
+    <!-- Page loading scripts -->
+    <script>
+      (function () {
+        window.onload = function () {
+          const preloader = document.querySelector('.page-loading');
+          preloader.classList.remove('active');
+          setTimeout(function () {
+            preloader.remove();
+          }, 1000);
+        };
+      })();
+    </script>
+  </head>
+
+
+  <!-- Body -->
+  <body>
+
+    <!-- Page loading spinner -->
+    <div class="page-loading active">
+      <div class="page-loading-inner">
+        <div class="page-spinner"></div><span>Loading...</span>
+      </div>
+    </div>
+
+
+    <!-- Page wrapper for sticky footer -->
+    <!-- Wraps everything except footer to push footer to the bottom of the page if there is little content -->
+    <main class="page-wrapper">
+
+
+      <!-- Navbar -->
+      <!-- Remove "navbar-sticky" class to make navigation bar scrollable with the page -->
+      <header class="header navbar navbar-expand-lg navbar-dark position-absolute">
+        <div class="container px-3">
+          <a href="index.html" class="navbar-brand pe-3">
+            <img src="assets/img/logo.svg" width="47" alt="Kriptograph">
+            Kriptograph
+          </a>
+          <div id="navbarNav" class="offcanvas offcanvas-end bg-dark">
+            <div class="offcanvas-header border-bottom border-light">
+              <h5 class="offcanvas-title text-white">Menu</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body text-center">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0 justify-content-center">
+              <li class="nav-item">
+              <a href="index.html" class="nav-link">Home</a>
+              </li>
+              <li class="nav-item"></li>
+              <a href="about.html" class="nav-link">About Us</a>
+              </li>
+              </ul>
+            </div>
+            <div class="offcanvas-header border-top border-light">
+              <a href="https://calendly.com/hd0216/kriptograph-demo-call" class="btn btn-primary w-100" target="_blank" rel="noopener">
+
+                &nbsp;Request a Demo
+              </a>
+            </div>      
+          </div>
+          <div class="pe-lg-1 ms-auto me-4" data-bs-theme="dark">
+        </div>
+        <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a href="https://calendly.com/hd0216/kriptograph-demo-call" class="btn btn-primary btn-sm fs-sm rounded d-none d-lg-inline-flex" target="_blank" rel="noopener">
+          &nbsp;Request a Demo
+        </a>
+        </div>
+      </header>
+    
+      <br>
+      <br>
+      <!-- Story -->
+    <section class="container mb-2 pt-md-1 pt-lg-4 pt-xl-5">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center" style="max-width: 46.625rem;">
+            <h2 class="h1 mb-4" style="font-size: 2.5rem;">We're Kriptograph!</h2>
+            <h5 class="h4 mb-4" style="font-size: 1.5rem;">A new era in leveraging blockchain analytics for strategic business insights.</h5>
+            <p class="mb-5" style="text-align: justify; font-size: 1.1rem;">Kriptograph is an innovative company that uses advanced data analysis and artificial intelligence to offer comprehensive insights into cryptocurrency markets. By integrating blockchain data with traditional web analytics, we aim to provide in-depth understanding of token usage, client behaviors, and market trends. Kriptograph's AI algorithms analyze vast amounts of data to deliver predictions on token holdings, helping businesses anticipate market movements and customer interactions.</p>
+            <p class="mb-5" style="text-align: justify; font-size: 1.1rem;">Kriptograph not only saves companies time but also empowers them with the confidence to make data-driven decisions. Whether businesses are looking to optimize their token strategies, enhance client engagement, or predict future market conditions, they can rely on Kriptograph's services. The company aims to democratize access to sophisticated analytics, making advanced data tools accessible to all, thereby transforming the landscape of cryptocurrency analytics.</p>
+            <p class="mb-5" style="text-align: justify; font-size: 1.1rem;">Prioritizing client success, Kriptograph continuously refines its algorithms to better understand and serve each company's unique needs and goals. With Kriptograph, businesses can harness the power of blockchain and web analytics to forge new paths in understanding and engaging their markets. Positioned at the convergence of technology and finance, Kriptograph brings advanced analytics into the digital age, offering businesses unparalleled insight and competitive edge.</p>
+        </div>
+    </section>
+
+
+    <!-- Team -->
+    <section class="container mb-5 py-lg-3 py-xl-4 py-xxl-5">
+        <div class="mt-4 py-2 pb-sm-3 pb-md-4 pb-lg-5 mx-auto text-center">
+            <h2 class="h1 mb-md-0">Our talented team</h2>
+        </div>
+
+        <!-- Team grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 pb-lg-2 pb-xl-3 justify-content-center">
+
+            <!-- Item -->
+            <div class="col">
+                <div class="card card-hover border-0 bg-transparent">
+                    <div class="position-relative">
+                        <img src="assets/img/team/yagiz.jpeg" class="rounded-3" alt="Ralph Edwards">
+                        <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
+                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
+                            <div class="position-relative d-flex zindex-2">
+                                <a href="https://github.com/ygzdvr" class="btn btn-icon btn-secondary btn-github btn-sm bg-white me-2" aria-label="Github">
+                                    <i class="bx bxl-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/yagizdevre/" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2" aria-label="LinkedIn">
+                                    <i class="bx bxl-linkedin"></i>
+                                </a>
+                                <a href="mailto:yagiz.devre@princeton.edu" class="btn btn-icon btn-secondary btn-google btn-sm bg-white" aria-label="Google">
+                                    <i class="bx bxl-google"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center p-3">
+                        <h3 class="fs-lg fw-semibold pt-1 mb-2">Yagiz Devre</h3>
+                        <p class="fs-sm mb-0">Co-Founder &amp; CEO</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item -->
+            <div class="col">
+                <div class="card card-hover border-0 bg-transparent">
+                    <div class="position-relative">
+                        <img src="assets/img/team/huseyin.jpeg" class="rounded-3" alt="Albert Flores">
+                        <div class="card-img-overlay d-flex flex-column align-items-center justify-content-center rounded-3">
+                            <span class="position-absolute top-0 start-0 w-100 h-100 bg-primary opacity-35 rounded-3"></span>
+                            <div class="position-relative d-flex zindex-2">
+                                <a href="https://github.com/hsahin28" class="btn btn-icon btn-secondary btn-github btn-sm bg-white me-2" aria-label="Github">
+                                    <i class="bx bxl-github"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/in/huseyin-sahin-985a62282" class="btn btn-icon btn-secondary btn-linkedin btn-sm bg-white me-2" aria-label="LinkedIn">
+                                    <i class="bx bxl-linkedin"></i>
+                                </a>
+                                <a href="mailto:hs1265@princeton.edu" class="btn btn-icon btn-secondary btn-google btn-sm bg-white" aria-label="Google">
+                                    <i class="bx bxl-google"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body text-center p-3">
+                        <h3 class="fs-lg fw-semibold pt-1 mb-2">Huseyin Sahin</h3>
+                        <p class="fs-sm mb-0">Co-Founder &amp; CTO</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+      <!-- CTA -->
+      <section class="container">
+        <div class="position-relative bg-dark rounded-3 overflow-hidden px-3 py-5">
+          <span class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(255, 255, 255, .05)"></span>
+          <div class="position-relative zindex-5 text-center my-xl-3 py-1 py-md-4 py-lg-5">
+            <p class="lead text-light opacity-70 mb-3">Ready to get started?</p>
+            <h2 class="h1 text-light pb-3 pb-lg-0 mb-lg-5">Embrace the Future Today</h2>
+            <a href="https://calendly.com/hd0216/kriptograph-demo-call" class="btn btn-primary btn-lg">Request a Demo</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+      <div class="container text-center pt-2 pt-sm-3">
+        <div class="navbar-brand d-inline-block text-dark p-0 me-0 mb-4 pb-md-2">
+          <img src="assets/img/logo.svg" width="47" alt="Kriptograph">
+          Kriptograph
+        </div>
+        <ul class="nav align-items-center justify-content-center mb-4 pb-1 pb-md-3">
+          <li class="nav-item mx-lg-1 px-md-2">
+            <a href="index.html" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item mx-lg-1 px-md-2">
+            <a href="about.html" class="nav-link">About Us</a>
+          </li>
+        </ul>
+        <div class="d-inline-block mt-n3 ms-n3 pb-2 pb-md-3 mb-4 mb-lg-5">
+          <a href="#" class="btn btn-icon btn-secondary btn-facebook mt-3 ms-3" aria-label="Facebook">
+            <i class="bx bxl-facebook-square"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-twitter mt-3 ms-3" aria-label="Twitter">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-instagram mt-3 ms-3" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="#" class="btn btn-icon btn-secondary btn-youtube mt-3 ms-3" aria-label="YouTube">
+            <i class="bx bxl-youtube"></i>
+          </a>
+        </div>
+        <p class="mb-0 mx-auto fs-sm text-muted" style="max-width: 53.5rem">&copy; All rights reserved. Made by Kriptograph Inc.</p>
+      </div>
+    </footer>
+
+
+    <!-- Back to top button -->
+    <a href="#top" class="btn-scroll-top" data-scroll>
+      <span class="btn-scroll-top-tooltip text-muted fs-sm me-2">Top</span>
+      <i class="btn-scroll-top-icon bx bx-chevron-up"></i>
+    </a>
+
+
+    <!-- Vendor Scripts -->
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/lightgallery/lightgallery.min.js"></script>
+    <script src="assets/vendor/lightgallery/plugins/video/lg-video.min.js"></script>
+
+    <!-- Main Theme Script -->
+    <script src="assets/js/theme.min.js"></script>
+  </body>
+</html>

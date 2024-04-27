@@ -58,7 +58,7 @@ const bundleJS = async (output) => {
       sourcemap: true,
       banner: `
 /**
- * Silicon | Multipurpose Bootstrap 5 Template & UI Kit
+ * Kriptograph | Multipurpose Bootstrap 5 Template & UI Kit
  * Copyright 2023 Createx Studio
  * Theme scripts
  *
